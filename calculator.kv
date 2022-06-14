@@ -1,0 +1,67 @@
+<CustomButton@Button>:
+    background_color:"black"
+    color:"orange"
+    font_size:80
+    on_release:root.parent.parent.insert_character(root.text)
+    
+
+<Calculator>:
+    text_input:text_input
+    orientation:"vertical"
+    TextInput:
+        font_size:100
+        background_color:rgba(40,40,40,40)
+        foreground_color:"orange"
+        cursor_color:"orange"
+        multiline:False
+        id:text_input
+        size_hint_y:.4
+        keyboard_mode:"managed"  
+        
+    GridLayout:
+        cols:4
+        CustomButton:
+            text:"7"  
+        CustomButton:
+            text:"8"        
+        CustomButton:
+            text:"9"
+        Button:
+            background_color:"black"
+            color:"red"
+            text:"C"
+            font_size:95
+            on_release:root.clear_input()
+
+   
+        CustomButton:
+            text:"4"  
+        CustomButton:
+            text:"5"  
+        CustomButton:
+            text:"6" 
+        CustomButton:
+            text:"-" 
+        CustomButton:
+            text:"1"  
+        CustomButton:
+            text:"2"  
+        CustomButton:
+            text:"3"  
+        CustomButton:
+            text:"+"  
+        CustomButton:
+            text:"."  
+        CustomButton:
+            text:"0"  
+        CustomButton:
+            text:"*"  
+        CustomButton:
+            text:"/"  
+    Button:
+        background_color:"black"
+        color:"orange"
+        text:"="
+        font_size:95
+        size_hint_y:.2
+        on_release:root.calculate()
